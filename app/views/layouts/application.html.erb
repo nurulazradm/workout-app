@@ -10,8 +10,27 @@
   </head>
 
   <body>
-    <%= link_to "Home", root_path %>
-    <%= link_to "Athletes Den", root_path %>
-    <%= yield %>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">
+        <%= link_to "Athletes Den", root_path, class: 'p-2 text-dark' %>
+      </h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <%= link_to "Home", root_path, class: 'p-2 text-dark' %>
+      </nav>
+      <a class="btn btn-outline-primary" href="#">Sign up</a>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+          </div>
+        </div>
+      </footer>
+    </div>
+
   </body>
 </html>
