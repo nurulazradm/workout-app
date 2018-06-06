@@ -1,24 +1,9 @@
-# README
+#1- Install RSpec and Capybara
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Gemfile:
+* gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
+* gem 'capybara', '~> 3.2', '>= 3.2.1'
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rake:
+* rails g rspec:install
+* bundle binstubs rspec-core
