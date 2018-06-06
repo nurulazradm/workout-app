@@ -14,3 +14,11 @@ RSpec Commands:
 Capybara Cheatsheet:
 * expect(page).to have_link('')
 * expect(page).to have_content('')
+
+### 2- Install Guard
+
+Gemfile:
+* gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
+
+Bundle:
+* bundle exec guard init rspec
