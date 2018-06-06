@@ -22,3 +22,11 @@ Gemfile:
 
 Bundle:
 * bundle exec guard init rspec
+
+### 3- Rails Generator
+
+Skip rails default generator:
+* --skip-routes --no-helper --no-assets
+
+Skip rspec default generator:
+* --no-controller-specs --no-view-specs --no-helper-specs
