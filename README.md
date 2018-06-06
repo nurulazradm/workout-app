@@ -1,4 +1,4 @@
-#1- Install RSpec and Capybara
+### 1- Install RSpec and Capybara
 
 Gemfile:
 * gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
@@ -7,3 +7,10 @@ Gemfile:
 Rake:
 * rails g rspec:install
 * bundle binstubs rspec-core
+
+RSpec Commands:
+* rails generate rspec:feature NAME [--singularize]
+
+Capybara Cheatsheet:
+* expect(page).to have_link('')
+* expect(page).to have_content('')
