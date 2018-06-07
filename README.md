@@ -30,3 +30,20 @@ Skip rails default generator:
 
 Skip rspec default generator:
 * --no-controller-specs --no-view-specs --no-helper-specs
+
+### 4- Bootstrap
+
+Gemfile:
+* gem 'bootstrap', '~> 4.1', '>= 4.1.1'
+* gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+
+Stylesheet:
+* mv app/assets/stylesheets/application.css app/assets/stylesheets/application.scss
+* replace the content with ```@import "bootstrap";```
+
+Javascript:
+
+After ```//= require rails-ujs```, add the followings:
+
+* //= require popper
+* //= require bootstrap
