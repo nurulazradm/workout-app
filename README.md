@@ -47,3 +47,11 @@ After ```//= require rails-ujs```, add the followings:
 
 * //= require popper
 * //= require bootstrap
+
+### 5- Devise
+
+Gemfile:
+* gem 'devise', '~> 4.4', '>= 4.4.3'
+
+Rake:
+* rails g devise:install
