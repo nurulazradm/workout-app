@@ -8,8 +8,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a9ba90de3e27b2438b56ec0a38f15c1b52adfacc2e197f1b81c4c28b3cccb41a7ea36ccacdf0ec36cdd5f054466cf6a17f31ba1bede1229d0e2de9678f88190b'
-  
+  config.secret_key = WorkoutApp::Application.config.secret_key_base
+
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
