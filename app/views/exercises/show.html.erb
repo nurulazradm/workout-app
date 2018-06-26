@@ -1,0 +1,11 @@
+<h2>Showing <%= "#{@exercise.user.full_name}'s Workout Details" %></h2>
+
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title"><%= @exercise.workout %></h5>
+    <p class="card-text">
+      Duration (min): <%= @exercise.duration_in_min %><br />
+      Activity date: <%= @exercise.workout_date %>
+    </p>
+  </div>
+</div>

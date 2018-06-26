@@ -55,3 +55,9 @@ Gemfile:
 
 Rake:
 * rails g devise:install
+
+### 6- Migration
+
+Rake:
+* rails g migration add_name_to_users first_name, last_name
+* rails db:migrate

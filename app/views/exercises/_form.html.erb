@@ -1,0 +1,38 @@
+<%= form_for([@user, @exercise]) do |f| %>
+
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, 'error') %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+        <% @exercise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group row">
+    <%= f.label :duration_in_min, "Duration (min)", class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= f.number_field :duration_in_min, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :workout, "Workout Details", class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :workout, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <%= f.label :workout_date, "Activity Date", class: 'col-sm-2 col-form-label' %>
+    <div class="col-sm-10">
+      <%= f.text_field :workout_date, class: 'form-control' %>
+    </div>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary btn-lg' %>
+
+<% end %>
