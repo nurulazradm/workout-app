@@ -1,16 +1,15 @@
 class ExercisesController < ApplicationController
+  before_action :set_user, only: [:index, :new, :create]
 
   def index
-
+    @exercises = @user.exercises
   end
 
   def new
-    @user = current_user
     @exercise = @user.exercises.new
   end
 
   def create
-    @user = current_user
     @exercise = current_user.exercises.new(exercise_params)
 
     if @exercise.save
@@ -29,5 +28,9 @@ class ExercisesController < ApplicationController
 
   def exercise_params
     params.require(:exercise).permit(:duration_in_min, :workout, :workout_date, :user_id)
+  end
+
+  def set_user
+    @user = current_user
   end
 end
