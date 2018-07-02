@@ -1,4 +1,7 @@
-@import "bootstrap";
+/*
+ *= require jquery-ui/datepicker
+ *= require bootstrap4
+ */
 
 html {
   font-size: 14px;
