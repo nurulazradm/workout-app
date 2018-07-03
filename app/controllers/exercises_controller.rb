@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-  before_action :set_user, only: [:index, :new, :create]
+  before_action :set_user, only: [:index, :new, :create, :show]
 
   def index
     @exercises = @user.exercises
@@ -21,7 +21,7 @@ class ExercisesController < ApplicationController
   end
 
   def show
-    @exercise = Exercise.find(params[:id])
+    @exercise = @user.exercises.find(params[:id])
   end
 
   private
