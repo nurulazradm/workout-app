@@ -13,4 +13,16 @@ class User < ApplicationRecord
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def self.search_by_name(name)
+    names = name.split(' ')
+
+    if names.size == 1
+      where('first_name like ? or last_name like ?',
+            "%#{names[0]}%", "%#{names[0]}%").order(:first_name)
+    else
+      where('first_name like ? or first_name like ? or last_name like ? or last_name like ?',
+            "%#{names[0]}%", "%#{names[1]}%", "%#{names[0]}%", "%#{names[1]}%").order(:first_name)
+    end
+  end
 end

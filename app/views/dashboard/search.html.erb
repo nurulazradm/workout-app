@@ -1,0 +1,11 @@
+<div class="row search-result">
+  <% @athletes.each do |athlete| %>
+  <div class="card w-25">
+    <div class="card-body">
+      <p class="card-text"><%= athlete.full_name %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= will_paginate @athletes, renderer: BootstrapPagination::Rails %>
