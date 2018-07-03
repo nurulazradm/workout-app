@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Users sign out", type: :feature do
   before do
-    @user = User.create!(email: 'user@example.com', password: 'secret')
+    @user = User.create!(first_name: 'John', last_name: 'Doe', email: 'user@example.com', password: 'secret')
 
     visit root_path
 
