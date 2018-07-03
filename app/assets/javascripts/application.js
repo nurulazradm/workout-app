@@ -15,6 +15,7 @@
 //= require jquery-ui/widgets/datepicker
 //= require popper
 //= require bootstrap
+//= require d3
 //= require activestorage
 //= require turbolinks
 //= require_tree .
