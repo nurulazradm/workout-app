@@ -6,16 +6,18 @@
   <div class="col-12">
     <h2>Listing of Members</h2>
     <%= will_paginate @athletes, renderer: BootstrapPagination::Rails, class: 'pull-left paginate' %>
-
+  </div>
+</div>
+<div class="row">
     <% @athletes.each do |athlete| %>
-    <div class="card" style="width: 18rem">
-      <div class="card-body">
-        <p class="card-text">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
           <%= athlete.full_name %>
-        </p>
-        <% if current_user %>
-          <%= link_to 'Follow', friendships_path(friend_id: athlete), method: :post, class: 'btn btn-outline-success' unless current_user.follows_or_same?(athlete) %>
-        <% end %>
+          <% if current_user %>
+          <%= link_to 'Follow', friendships_path(friend_id: athlete), method: :post, class: 'btn btn-outline-success float-right' unless current_user.follows_or_same?(athlete) %>
+          <% end %>
+        </div>
       </div>
     </div>
     <% end %>

@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <%= form_tag(dashboard_search_path, class: 'form-inline', role: 'search') do %>
         <input class="form-control mr-sm-2" name="search_name" type="search" placeholder="Search for friends" aria-label="Search" />
@@ -14,9 +14,9 @@
       <% end %>
     </ul>
     <% if user_signed_in? %>
-      <%= link_to "My Lounge", user_exercises_path(current_user) %>
+      <%= link_to "My Lounge", user_exercises_path(current_user), class: 'text-light mx-2' %>
       <%= "Signed in as #{current_user.email}" %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger mx-2' %>
     <% else %>
       <div class="btn-group">
         <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-primary' %>
