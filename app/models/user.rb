@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :exercises
+  has_many :friendships
+  has_many :friends, through: :friendships, class_name: 'User'
 
   validates :first_name, :last_name, presence: true
 
@@ -24,5 +26,9 @@ class User < ApplicationRecord
       where('first_name like ? or first_name like ? or last_name like ? or last_name like ?',
             "%#{names[0]}%", "%#{names[1]}%", "%#{names[0]}%", "%#{names[1]}%").order(:first_name)
     end
+  end
+
+  def follows_or_same?(new_friend)
+    friendships.map(&:friend).include?(new_friend) || self == new_friend
   end
 end

@@ -13,6 +13,9 @@
         <p class="card-text">
           <%= athlete.full_name %>
         </p>
+        <% if current_user %>
+          <%= link_to 'Follow', friendships_path(friend_id: athlete), method: :post, class: 'btn btn-outline-success' unless current_user.follows_or_same?(athlete) %>
+        <% end %>
       </div>
     </div>
     <% end %>
