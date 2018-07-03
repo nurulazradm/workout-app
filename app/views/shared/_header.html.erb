@@ -13,7 +13,11 @@
         <button type="submit" class="btn btn-outline-light my-2 my-sm-0">Search</button>
       <% end %>
     </ul>
-    <% unless user_signed_in? %>
+    <% if user_signed_in? %>
+      <%= link_to "My Lounge", user_exercises_path(current_user) %>
+      <%= "Signed in as #{current_user.email}" %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+    <% else %>
       <div class="btn-group">
         <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-primary' %>
         <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-outline-primary' %>
