@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "Listing Exercises", type: :feature do
   before do
-    @user = User.create!(first_name: 'John', last_name: 'Doe', email: 'user@example.com', password: 'secret')
+    @user = User.create!(first_name: 'John', last_name: 'Doe', email: 'john@example.com', password: 'secret')
+    @friend = User.create!(first_name: 'Jane', last_name: 'Doe', email: 'jane@example.com', password: 'secret')
     login_as @user
 
     @ex1 = @user.exercises.create(
@@ -22,6 +23,8 @@ RSpec.feature "Listing Exercises", type: :feature do
       workout: 'On treadmill',
       workout_date: 8.days.ago
     )
+
+    @following = Friendship.create(user: @user, friend: @friend)
   end
 
   scenario "show user's workout for last 7 days" do
@@ -50,5 +53,15 @@ RSpec.feature "Listing Exercises", type: :feature do
     click_link "My Lounge"
 
     expect(page).to have_content 'No Workouts Yet'
+  end
+
+  scenario "shows a list of user's friends" do
+    visit root_path
+
+    click_link 'My Lounge'
+
+    expect(page).to have_content 'My Friends'
+    expect(page).to have_link @friend.full_name
+    expect(page).to have_link 'Unfollow'
   end
 end
