@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -60,10 +60,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
-gem 'bootstrap', '~> 4.1', '>= 4.1.1'
+gem 'bootstrap', '>= 4.3.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
-gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise', '>= 4.6.0'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
-gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
-gem 'd3-rails', '~> 5.4'
-gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+gem 'nokogiri', '>= 1.10.4'
