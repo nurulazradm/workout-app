@@ -8,4 +8,5 @@
   <% end %>
 </div>
 
-<%= will_paginate @athletes, renderer: BootstrapPagination::Rails %>
+<%#= will_paginate @athletes, renderer: BootstrapPagination::Rails %>
+<%== pagy_bootstrap_nav(@pagy) %>
